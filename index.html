@@ -348,6 +348,281 @@
           </div>
         </div>
       </div>
+
+      <!-- === UKÁZKA REPORTU KARTA === -->
+      <div class="report-preview-card" style="margin:36px 0 0 0; overflow:visible;">
+        <div class="report-preview-badge">Ukázka reportu</div>
+        <div class="report-preview-content">
+          <div class="report-preview-main">
+            <h3 class="report-preview-title" id="reportPreviewTitle">Jak může vypadat váš měsíční přehled?</h3>
+            <div class="report-preview-desc">Ne jen věty. Souhrn čísel, grafy, témata chvály/stížností a 2–3 doporučení.</div>
+            <div class="report-preview-cta-row">
+              <a
+                href="#"
+                class="btn report-preview-cta"
+                id="reportPreviewBtn"
+                data-attr="report_preview_open"
+                type="button"
+                aria-controls="reportPreviewModal"
+                aria-expanded="false"
+                >Prohlédnout ukázku</a>
+            </div>
+          </div>
+          <!-- (volitelně) thumb pro budoucí rozšíření:
+          <div class="report-preview-thumb-wrap">
+            <img
+              id="reportPreviewThumb"
+              src="recenznik_report_mockup_pretty.png"
+              data-src="recenznik_report_mockup_pretty.png"
+              alt="Náhled reportu"
+              class="report-preview-thumb"
+              role="button"
+              tabindex="0"
+              style="max-width:160px;max-height:120px;"
+            />
+          </div>
+          -->
+        </div>
+      </div>
+      <!-- === /UKÁZKA REPORTU KARTA === -->
+
+      <style>
+        .report-preview-card {
+          position:relative;
+          background:#fff;
+          border-radius:var(--radius);
+          box-shadow:var(--shadow);
+          border:1px solid var(--border);
+          display:flex;
+          flex-direction:column;
+          padding:28px 32px 24px 0;
+          margin-top:36px;
+          overflow:visible; /* fix badge clipping */
+        }
+        .report-preview-badge {
+          top:-12px; left:16px;
+          background:#fff; color:#334155;
+          border:1px solid var(--border);
+          border-radius:999px; padding:6px 14px;
+          box-shadow:var(--shadow);
+          font-size:13px;
+          font-weight:700;
+          z-index:2;
+          letter-spacing:.01em;
+          position:absolute;
+        }
+        .report-preview-card::before {
+          content:"";
+          display:block;
+          position:absolute;
+          left:0; top:0; bottom:0;
+          width:4px;
+          background:var(--primary);
+          border-radius:var(--radius) 0 0 var(--radius);
+        }
+        .report-preview-content {
+          display:flex;
+          align-items:center;
+          gap:36px;
+          margin-left:24px;
+        }
+        .report-preview-main {
+          flex:1 1 0;
+          min-width:0;
+        }
+        .report-preview-title {
+          color:#0F172A;
+          font-size:1.35rem;
+          font-weight:800;
+          margin:0 0 10px 0;
+        }
+        .report-preview-desc {
+          color:var(--muted);
+          font-size:1rem;
+          margin-bottom:18px;
+          max-width:420px;
+        }
+        .report-preview-cta-row {
+          display:flex;
+          gap:18px;
+          align-items:center;
+          flex-wrap:wrap;
+        }
+        .report-preview-link {
+          color:var(--muted);
+          font-size:15px;
+          text-decoration:underline;
+          background:none;
+          border:none;
+          cursor:pointer;
+          padding:0;
+        }
+        .report-preview-thumb-wrap {
+          flex:0 0 auto;
+          display:flex;
+          align-items:center;
+          justify-content:center;
+        }
+        .report-preview-thumb {
+          border:1.5px solid var(--border);
+          border-radius:var(--radius-sm);
+          box-shadow:0 4px 16px rgba(37,99,235,.10);
+          cursor:pointer;
+          background:#fff;
+          transition:box-shadow .18s, border-color .18s;
+        }
+        .report-preview-thumb:focus,
+        .report-preview-thumb:hover {
+          border-color:var(--primary);
+          box-shadow:0 8px 24px rgba(37,99,235,.18);
+          outline:2px solid var(--primary);
+          outline-offset:2px;
+        }
+        @media (max-width: 900px) {
+          .report-preview-content { flex-direction:column; align-items:flex-start; gap:22px; margin-left:16px;}
+          .report-preview-thumb-wrap { width:100%; justify-content:flex-start; }
+          .report-preview-thumb { max-width:100%; height:auto; }
+        }
+        @media (max-width: 600px) {
+          .report-preview-card { padding:20px 8px 18px 0; }
+          .report-preview-content { margin-left:10px; }
+          .report-preview-title { font-size:1.08rem; }
+          .report-preview-desc { font-size:.97rem; }
+        }
+      </style>
+
+      <!-- === MODAL === -->
+      <div
+        id="reportPreviewModal"
+        class="report-preview-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="reportPreviewModalTitle"
+        tabindex="-1"
+        style="display:none"
+      >
+        <div class="report-preview-modal-backdrop"></div>
+        <div class="report-preview-modal-dialog" tabindex="0">
+          <div class="report-preview-modal-header">
+            <h2 id="reportPreviewModalTitle">Ukázka měsíčního reportu</h2>
+          </div>
+          <div class="report-preview-modal-body">
+            <img
+              id="reportPreviewModalImg"
+              src=""
+              alt="Ukázka měsíčního reportu Recenzník"
+              style="max-width:100%;max-height:90vh;display:block;margin:0 auto;background:#fff;border-radius:12px;box-shadow:0 6px 24px rgba(37,99,235,.10);"
+            />
+            <div class="report-preview-modal-legend">
+              Jedna stránka: počet recenzí, průměr ★, rozdělení 1–5★, témata chvály/stížností, 2–3 doporučení.
+            </div>
+          </div>
+          <div class="report-preview-modal-footer">
+            <button type="button" class="btn" id="reportPreviewModalClose">Zavřít</button>
+          </div>
+        </div>
+      </div>
+      <style>
+        .report-preview-modal {
+          position:fixed; z-index:9999; inset:0;
+          display:flex; align-items:center; justify-content:center;
+        }
+        .report-preview-modal-backdrop {
+          position:absolute; inset:0;
+          background:rgba(16,23,40,0.38);
+          z-index:0;
+        }
+        .report-preview-modal-dialog {
+          position:relative;
+          background:#fff;
+          border-radius:var(--radius);
+          box-shadow:0 12px 48px rgba(16,23,40,0.18);
+          padding:32px 24px 18px 24px;
+          max-width:540px;
+          width:95vw;
+          z-index:1;
+          display:flex;
+          flex-direction:column;
+          align-items:center;
+          outline:none;
+        }
+        .report-preview-modal-header h2 {
+          font-size:1.25rem;
+          font-weight:800;
+          margin:0 0 18px 0;
+          color:#0F172A;
+          text-align:center;
+        }
+        .report-preview-modal-body {
+          width:100%;
+          text-align:center;
+        }
+        .report-preview-modal-legend {
+          color:var(--muted);
+          font-size:15px;
+          margin:18px 0 0 0;
+        }
+        .report-preview-modal-footer {
+          margin-top:18px;
+          width:100%;
+          display:flex;
+          justify-content:center;
+        }
+        @media (max-width:600px) {
+          .report-preview-modal-dialog { padding:16px 4vw 12px 4vw; }
+          .report-preview-modal-header h2 { font-size:1.05rem; }
+        }
+      </style>
+      <!-- === /MODAL === -->
+
+      <script>
+        // --- Modal logic ---
+        (function(){
+          const modal = document.getElementById('reportPreviewModal');
+          const modalImg = document.getElementById('reportPreviewModalImg');
+          const modalClose = document.getElementById('reportPreviewModalClose');
+          const modalDialog = modal.querySelector('.report-preview-modal-dialog');
+          const ctaBtn = document.getElementById('reportPreviewBtn');
+          let lastFocus = null;
+
+          function openModal(e){
+            e?.preventDefault?.();
+            modalImg.src = 'recenznik_report_mockup_pretty.png';
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            ctaBtn?.setAttribute('aria-expanded','true');
+            lastFocus = document.activeElement;
+            modalDialog.focus();
+          }
+          function closeModal(){
+            modal.style.display = 'none';
+            document.body.style.overflow = '';
+            ctaBtn?.setAttribute('aria-expanded','false');
+            if (lastFocus) lastFocus.focus();
+          }
+          // Open by CTA
+          if (ctaBtn) ctaBtn.addEventListener('click', openModal);
+          // Close by button
+          if (modalClose) modalClose.addEventListener('click', closeModal);
+          // Close by ESC or click outside
+          modal.addEventListener('keydown', function(e){
+            if(e.key==='Escape'){ closeModal(); }
+            // Focus trap
+            if(e.key==='Tab'){
+              const focusables = modal.querySelectorAll('button, [tabindex]:not([tabindex="-1"])');
+              const first = focusables[0], last = focusables[focusables.length-1];
+              if(e.shiftKey && document.activeElement===first){ e.preventDefault(); last.focus(); }
+              else if(!e.shiftKey && document.activeElement===last){ e.preventDefault(); first.focus(); }
+            }
+          });
+          modal.addEventListener('mousedown', function(e){
+            if(e.target===modal || e.target.classList.contains('report-preview-modal-backdrop')) closeModal();
+          });
+        })();
+      </script>
+      <!-- === /UKÁZKA REPORTU === -->
+
+      <!-- ...ostatní deliver-item... -->
     </div>
   </section>
 
@@ -639,7 +914,7 @@
 
       <!-- Garance zkušebky -->
       <p class="center" style="margin-top:18px;color:var(--primary);font-weight:700">
-        Zkušebka: 14 dní zdarma.
+       
       </p>
       <p class="mini-guarantee">
         <strong>Bez rizika.</strong> Nevyžaduji kartu. Pokud během zkušebky nepřijde žádná recenze,
@@ -755,6 +1030,24 @@
             list.appendChild(row);
           }
           if(!email && exists){ exists.remove(); }
+        });
+      }
+
+      document.getElementById('priceToggle')?.addEventListener('click', (e)=>{
+        const btn = e.target.closest('button[role="tab"]');
+        if(!btn) return;
+        setMode(btn.id === 'tab-email' ? 'email' : 'manage');
+      });
+
+      setMode('manage'); // default
+    })();
+  </script>
+</body>
+</html>
+    })();
+  </script>
+</body>
+</html>
         });
       }
 
