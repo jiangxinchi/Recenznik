@@ -16,6 +16,7 @@
   <meta name="twitter:image" content="https://recenznik.cz/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%232563eb'/%3E%3Ctext x='50' y='60' text-anchor='middle' font-size='60' fill='white'%3ER%3C/text%3E%3C/svg%3E">
+  <link rel="canonical" href="https://recenznik.cz/">
   <style>
     :root{
       --bg:#f6f9ff;
@@ -64,10 +65,19 @@
     .section.alt, .section.alt2 { background:linear-gradient(180deg, #f6f9ff 0%, #e9f2ff 100%); }
     .section.bg-alt { background:var(--bg-alt); }
 
-    .persuasion{ max-width: 980px; margin: 0 auto; }
-    .persuasion-cols{ display:grid; gap:24px; grid-template-columns: 1.08fr 1fr; align-items:start; margin-top:20px;}
-    .panel{ background:#fff; border:1px solid #eaf0fb; border-radius:12px; padding:22px 24px; box-shadow:0 6px 20px rgba(37,99,235,.06); transition:.25s ease;}
+    .persuasion{ max-width: 1200px; margin: 0 auto; } /* zvýšeno z 980px */
+    .persuasion-cols{ display:grid; gap:36px; grid-template-columns: 1.1fr 1fr; align-items:start; margin-top:20px;}
+    .panel{ background:#fff; border:1px solid #eaf0fb; border-radius:12px; padding:32px 36px; box-shadow:0 6px 20px rgba(37,99,235,.06); transition:.25s ease; min-width:0;}
     .panel:hover{ transform:translateY(-4px); box-shadow:0 12px 26px rgba(37,99,235,.12); }
+    @media (min-width:1400px){
+      .persuasion{ max-width: 1400px; }
+      .persuasion-cols{ gap:56px; grid-template-columns: 1.15fr 1fr; }
+      .panel{ padding:40px 48px; }
+    }
+    @media (max-width:900px){
+      .persuasion-cols{ grid-template-columns:1fr; gap:24px; }
+      .panel{ padding:24px 14px; }
+    }
 
     /* Bullets -> malé pseudo-ikonky */
     .bullets{ margin:8px 0 6px; color:var(--muted); line-height:1.55; padding:0; }
@@ -252,6 +262,30 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Recenzík",
+    "url":"https://recenznik.cz",
+    "email":"recenzik.team@gmail.com",
+    "logo":"https://recenznik.cz/og-image.png"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Product",
+    "name":"Recenzík – správa odpovědí na recenze",
+    "description":"Odpovědi na Google recenze do 24 h, ladění tónu značky, měsíční mini-report.",
+    "brand":"Recenzík",
+    "offers":[
+      {"@type":"Offer","priceCurrency":"CZK","price":"590","name":"Light"},
+      {"@type":"Offer","priceCurrency":"CZK","price":"990","name":"Standard"},
+      {"@type":"Offer","priceCurrency":"CZK","price":"1490","name":"Pro"}
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -268,7 +302,7 @@
   <header class="section alt">
     <div class="container center">
       <h1>Recenzík</h1>
-      <p class="lead">Žádná recenze nezůstane bez odpovědi. Profesionálně a včas.</p>
+      <p class="lead">Každá recenze má odpověď do 24 h. Profesionálně, klidně a věcně.</p>
       <button id="cta" class="btn">14&nbsp;dní zdarma</button>
     </div>
   </header>
@@ -282,7 +316,7 @@
       <div class="deliver deliver-list">
         <div class="deliver-item">
           <div class="deliver-icon" aria-hidden="true">
-            <svg fill="none" viewBox="0 0 24 24" stroke-width="2">
+            <svg fill="none" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true">
               <circle cx="12" cy="12" r="9"></circle>
               <path d="M12 7v6l4 2"></path>
             </svg>
@@ -295,7 +329,7 @@
 
         <div class="deliver-item">
           <div class="deliver-icon" aria-hidden="true">
-            <svg fill="none" viewBox="0 0 24 24" stroke-width="2">
+            <svg fill="none" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true">
               <path d="M21 12a8 8 0 1 1-4-6.9L21 5v7z"></path>
             </svg>
           </div>
@@ -307,7 +341,7 @@
 
         <div class="deliver-item">
           <div class="deliver-icon" aria-hidden="true">
-            <svg fill="none" viewBox="0 0 24 24" stroke-width="2">
+            <svg fill="none" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true">
               <path d="M12 3l7 4v5c0 5-3.6 7.7-7 9-3.4-1.3-7-4-7-9V7l7-4z"></path>
             </svg>
           </div>
@@ -319,7 +353,7 @@
 
         <div class="deliver-item">
           <div class="deliver-icon" aria-hidden="true">
-            <svg fill="none" viewBox="0 0 24 24" stroke-width="2">
+            <svg fill="none" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true">
               <path d="M4 19h16"></path>
               <path d="M7 16V9"></path><path d="M12 16V5"></path><path d="M17 16v-7"></path>
             </svg>
@@ -337,7 +371,7 @@
 
         <div class="deliver-item">
           <div class="deliver-icon" aria-hidden="true">
-            <svg fill="none" viewBox="0 0 24 24" stroke-width="2">
+            <svg fill="none" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true">
               <path d="M7 11V8a5 5 0 0 1 9.8-1"></path>
               <rect x="5" y="11" width="14" height="10" rx="2"></rect>
             </svg>
@@ -633,7 +667,7 @@
       <p class="lead center">Protože zákazníci chtějí vědět, že nasloucháte.</p>
       <div class="persuasion-cols">
         <div class="panel">
-          <h3>Víte že?</h3>
+          <h3>Víte, že?</h3>
           <ul class="bullets">
             <li><strong>9 z 10</strong> lidí si před návštěvou čte recenze – a podle nich se rozhoduje.</li>
             <li><strong>88&nbsp;%</strong> hostů preferuje firmy, které <strong>odpovídají</strong> (kdo nereaguje, ztrácí téměř polovinu zákazníků).</li>
@@ -655,7 +689,7 @@
             </div>
             <div>
               <h3>Když přijde negativka</h3>
-              <p>Bez reakce to působí jako pravda. S klidnou odpovědí je to jen názor – často z toho vznikne druhá šance.</p>
+              <p>Bez reakce to často působí jako potvrzený fakt. S klidnou odpovědí je to jen názor – často z toho vznikne druhá šance.</p>
             </div>
             <p style="font-style:italic; color:var(--fg)">Podnik, který odpovídá na recenze, nevypadá, že jen přežívá. Naopak působí, že se stará.</p>
           </div>
@@ -735,7 +769,10 @@
           </ul>
         </div>
         <div class="card">
-          <h3>Smlouva pro klid</h3>
+          <h3>Jednoduchá smlouva (na přání)</h3>
+          <ul class="bullets">
+            <li>včetně DPA o zpracování dat</li>
+          </ul>
           <p>Na vyžádání připravím jednoduchou smlouvu o poskytování služby a zpracování dat. Pro vás větší jistota, pro mě jasná pravidla. Nic složitého, jen férová dohoda na papíře.</p>
         </div>
       </div>
@@ -829,19 +866,19 @@
             <div class="kicker">měsíc</div>
             <div class="list" data-features>
               <div class="row">
-                <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h8M5 6h14M5 18h4"/></svg></div>
+                <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h8M5 6h14M5 18h4"/></svg></div>
                 <div>15 odpovědí / měsíc</div>
               </div>
               <div class="row">
-                <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v6l4 2"/></svg></div>
+                <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v6l4 2"/></svg></div>
                 <div>Po–Pá odpověď do 24&nbsp;h</div>
               </div>
               <div class="row">
-                <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19h16M7 16V9M12 16V5M17 16v-7"/></svg></div>
+                <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19h16M7 16V9M12 16V5M17 16v-7"/></svg></div>
                 <div>Měsíční mini-report</div>
               </div>
               <div class="row">
-                <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 1 1-4-6.9L21 5v7z"/></svg></div>
+                <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 1 1-4-6.9L21 5v7z"/></svg></div>
                 <div>Ladění tónu značky</div>
               </div>
             </div>
@@ -857,23 +894,23 @@
             <div class="kicker">měsíc</div>
             <div class="list" data-features>
               <div class="row">
-                <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h8M5 6h14M5 18h4"/></svg></div>
+                <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h8M5 6h14M5 18h4"/></svg></div>
                 <div>50 odpovědí / měsíc</div>
               </div>
               <div class="row">
-                <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v6l4 2"/></svg></div>
+                <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v6l4 2"/></svg></div>
                 <div>Po–Pá odpověď do 24&nbsp;h</div>
               </div>
               <div class="row">
-                <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19h16M7 16V9M12 16V5M17 16v-7"/></svg></div>
+                <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19h16M7 16V9M12 16V5M17 16v-7"/></svg></div>
                 <div>Měsíční mini-report</div>
               </div>
               <div class="row">
-                <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 1 1-4-6.9L21 5v7z"/></svg></div>
+                <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 1 1-4-6.9L21 5v7z"/></svg></div>
                 <div>Ladění tónu značky</div>
               </div>
               <div class="row">
-                <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 1 1-4-6.9L21 5v7z"/></svg></div>
+                <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 1 1-4-6.9L21 5v7z"/></svg></div>
                 <div>Čeština + angličtina (další po dohodě, např. DE/SK)</div>
               </div>
             </div>
@@ -888,23 +925,23 @@
             <div class="kicker">měsíc</div>
             <div class="list" data-features>
               <div class="row">
-                <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h8M5 6h14M5 18h4"/></svg></div>
+                <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h8M5 6h14M5 18h4"/></svg></div>
                 <div>Neomezený počet odpovědí</div>
               </div>
               <div class="row">
-                <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v6l4 2"/></svg></div>
+                <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v6l4 2"/></svg></div>
                 <div>Odpovědi i o víkendech a svátcích</div>
               </div>
               <div class="row">
-                <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 1 1-4-6.9L21 5v7z"/></svg></div>
+                <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 1 1-4-6.9L21 5v7z"/></svg></div>
                 <div>Čeština + angličtina (další po dohodě, např. DE/SK)</div>
               </div>
               <div class="row">
-                <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 1 1-4-6.9L21 5v7z"/></svg></div>
+                <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 1 1-4-6.9L21 5v7z"/></svg></div>
                 <div>Ladění tónu značky</div>
               </div>
               <div class="row">
-                <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19h16M7 16V9M12 16V5M17 16v-7"/></svg></div>
+                <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19h16M7 16V9M12 16V5M17 16v-7"/></svg></div>
                 <div>Měsíční call / shrnutí</div>
               </div>
             </div>
@@ -960,7 +997,7 @@
       <h2>Chcete mít recenze pod kontrolou?</h2>
       <p class="lead" style="margin-top:8px"><a href="mailto:recenzik.team@gmail.com">recenzik.team@gmail.com</a></p>
       <p style="margin:8px 0 18px 0;color:var(--muted)">IČO: 21591202</p>
-      <a class="btn" href="recenzik.team@gmail.com">Začít zdarma</a>
+      <a class="btn" href="mailto:recenzik.team@gmail.com">Začít zdarma</a>
     </div>
   </section>
 
@@ -971,8 +1008,10 @@
       <p>
         <a href="faq.html">FAQ</a> &nbsp;|&nbsp;
         <a href="o-mne.html">O mně</a> &nbsp;|&nbsp;
-        <a href="obchodni-podminky.html">Obchodní podmínky</a> &nbsp;|&nbsp;
-        <a href="zasady-ochrany-osobnich-udaju.html">Zásady ochrany osobních údajů</a>
+        <a href="terms.html">Obchodní podmínky</a> &nbsp;|&nbsp;
+        <a href="privacy.html">Zásady ochrany osobních údajů</a> &nbsp;|&nbsp;
+        <a href="cookies.html">Cookies</a> &nbsp;|&nbsp;
+        <a href="imprint.html">Imprint</a>
       </p>
       <p style="color:var(--muted);margin-top:8px">IČO: 21591202</p>
     </div>
