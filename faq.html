@@ -7,7 +7,12 @@
   <meta name="description" content="Často kladené otázky ke službě odpovědí na recenze." />
   <link rel="stylesheet" href="odpovidacka.css" />
   <style>
-    body { background: #fff; color: #0f172a; font: 16px/1.6 system-ui,Arial,sans-serif; margin:0; }
+  body { background: #fff; color: #0f172a; font: 16px/1.6 system-ui,Arial,sans-serif; margin:0; }
+  :root{--pad:24px}
+  .card,.panel,.stat-card{padding:var(--pad);border-radius:12px}
+  .stat-figure{display:inline-flex;align-items:baseline;gap:2px}
+  .stat-figure .unit{font-size:.9em;line-height:1;vertical-align:baseline;margin-left:2px}
+  .nowrap{white-space:nowrap}
     .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
     .section { padding: 72px 0; }
     .center { text-align: center; }
@@ -19,15 +24,26 @@
   </style>
 </head>
 <body>
+  <nav style="width:100%;background:#f6f9ff;border-bottom:1px solid #e5e7eb;padding:12px 0 10px 0;margin-bottom:0;">
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:32px;">
+      <a class="nav-brand" href="index.html" style="font-weight:800;font-size:1.4em;color:#2563eb;letter-spacing:-.5px;">Recenzík</a>
+      <div style="display:flex;gap:28px;align-items:center;">
+        <a href="index.html">Hlavní stránka</a>
+        <a href="faq.html" aria-current="page" style="font-weight:700;">FAQ</a>
+        <a href="fakta.html">Fakta</a>
+        <a href="o-mne.html">O&nbsp;nás</a>
+      </div>
+    </div>
+  </nav>
   <section class="section">
     <div class="container">
       <h1 class="center">Často se ptáte</h1>
       <div class="faq">
         <details><summary>Musím vám dávat přístup do profilu?</summary>
-          <p>Ne, nabízím i variantu, kdy vám posílám návrhy e-mailem a odpověď vložíte vy.</p>
+          <p>Ne, nabízíme i variantu, kdy vám posíláme návrhy e-mailem a odpověď vložíte vy.</p>
         </details>
         <details><summary>Co když mám měsíc jen 2 recenze?</summary>
-          <p>Platíte stále stejně; nízká aktivita = víc času na ladění profilu a report.</p>
+          <p>Platíte stále stejně; nízká aktivita = víc času na ladění profilu a <strong>Týdenní report</strong> a <strong>Měsíční report</strong>.</p>
         </details>
         <details><summary>Jak rychle odpovídáte?</summary>
           <p>Standardně do 24 hodin Po–Pá, v tarifu Pro i o víkendech.</p>
@@ -39,7 +55,7 @@
           <p>Klidně, věcně a s fakty. Navrhnu odpověď, která snižuje konflikt a ukáže, že problém řešíte. Při porušení pravidel poradím s nahlášením.</p>
         </details>
         <details><summary>Musím odpovědi předem schvalovat?</summary>
-          <p>Na startu ano (doporučeno). Po vyladění tónu můžu odpovídat automaticky a posílat měsíční souhrn.</p>
+          <p>Na startu ano (doporučeno). Po vyladění tónu můžeme odpovídat automaticky a posílat <strong>Týdenní report</strong> a <strong>Měsíční report</strong>.</p>
         </details>
         <details><summary>Reagujete i o víkendech a ve svátky?</summary>
           <p>V tarifu <strong>Pro</strong> ano. V ostatních tarifech standardně Po–Pá.</p>
@@ -48,14 +64,14 @@
           <p>Čeština a angličtina. Po dohodě i další (DE/SK).</p>
         </details>
         <details><summary>Jak ukončím spolupráci?</summary>
-          <p>Kdykoli. Odeberete přístup Správce v Google Business a dáte mi vědět e-mailem.</p>
+          <p>Kdykoli. Odeberete přístup Správce v Google Business a dáte nám vědět e-mailem.</p>
         </details>
         <details><summary>Je opravdu zkušebka zdarma?</summary>
           <p>Ano, prvních 14 dní je zdarma a bez závazků. Pokud během zkušebky nepřijde žádná recenze, prodloužím ji na 30 dní.</p>
         </details>
       </div>
       <p class="center" style="margin-top:32px">
-        <a href="odpovidacka.html">Zpět na hlavní stránku</a>
+  <a href="index.html">Zpět na hlavní stránku</a>
       </p>
     </div>
   </section>

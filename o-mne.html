@@ -7,6 +7,11 @@
   <meta name="description" content="Kdo stojí za službou odpovědí na recenze." />
   <link rel="stylesheet" href="odpovidacka.css" />
   <style>
+    :root{--pad:24px}
+    .card,.panel,.stat-card{padding:var(--pad);border-radius:12px}
+    .stat-figure{display:inline-flex;align-items:baseline;gap:2px}
+    .stat-figure .unit{font-size:.9em;line-height:1;vertical-align:baseline;margin-left:2px}
+    .nowrap{white-space:nowrap}
     body { background: #fff; color: #0f172a; font: 16px/1.6 system-ui,Arial,sans-serif; margin:0; }
     .container { max-width: 700px; margin: 0 auto; padding: 0 20px; }
     .section { padding: 72px 0; }
@@ -17,25 +22,36 @@
   </style>
 </head>
 <body>
+  <nav style="width:100%;background:#f6f9ff;border-bottom:1px solid #e5e7eb;padding:12px 0 10px 0;margin-bottom:0;">
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:32px;">
+      <a class="nav-brand" href="index.html" style="font-weight:800;font-size:1.4em;color:#2563eb;letter-spacing:-.5px;">Recenzík</a>
+      <div style="display:flex;gap:28px;align-items:center;">
+        <a href="index.html">Hlavní stránka</a>
+        <a href="faq.html">FAQ</a>
+        <a href="fakta.html">Fakta</a>
+        <a href="o-mne.html" aria-current="page" style="font-weight:700;">O&nbsp;nás</a>
+      </div>
+    </div>
+  </nav>
   <section class="section">
     <div class="container">
       <h1 class="center">O mně</h1>
       <!-- Pokud máte fotku, můžete ji zde vložit -->
       <!-- <img src="ja.jpg" alt="Portrét" class="portrait" /> -->
       <p>
-        Jmenuji se Xinchi Jiang a pomáhám firmám odpovídat na Google recenze. Dělám to rychle, slušně a v tónu vaší značky.
+        Jsme tým Recenzíku a pomáháme firmám odpovídat na Google recenze. Děláme to rychle, slušně a v tónu vaší značky.
       </p>
       <p>
         Dobrá odpověď zklidní napětí, ukáže, že se o hosty staráte, a pomáhá i viditelnosti ve Vyhledávání a Mapách.
       </p>
       <p>
-        Jak pracuji: domluvíme si styl, nové recenze mají odpověď do 24 hodin v pracovních dnech (u tarifu Pro i o víkendu) a jednou měsíčně pošlu přehled s čísly a doporučeními.
+        Jak pracujeme: domluvíme si styl, nové recenze mají odpověď do 24 hodin v pracovních dnech (u tarifu Pro i o víkendu) a jednou měsíčně posíláme report s čísly a doporučeními.
       </p>
       <p>
-        Mimo práci rád vařím. I proto mám rád detail a věci dotahuju „do chuti“.
+        Mimo práci rádi vaříme. I proto máme rádi detail a věci dotahujeme „do chuti“.
       </p>
       <p>
-        <a href="odpovidacka.html">Zpět na hlavní stránku</a>
+  <a href="index.html">Zpět na hlavní stránku</a>
       </p>
     </div>
   </section>
