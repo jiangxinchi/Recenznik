@@ -1,79 +1,42 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="utf-8" />
-  <title>FAQ – Recenzník</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Často kladené otázky ke službě odpovědí na recenze." />
-  <link rel="stylesheet" href="odpovidacka.css" />
-  <style>
-  body { background: #fff; color: #0f172a; font: 16px/1.6 system-ui,Arial,sans-serif; margin:0; }
-  :root{--pad:24px}
-  .card,.panel,.stat-card{padding:var(--pad);border-radius:12px}
-  .stat-figure{display:inline-flex;align-items:baseline;gap:2px}
-  .stat-figure .unit{font-size:.9em;line-height:1;vertical-align:baseline;margin-left:2px}
-  .nowrap{white-space:nowrap}
-    .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
-    .section { padding: 72px 0; }
-    .center { text-align: center; }
-    .faq details { background:#fff; border:1px solid #eaf0fb; border-radius:12px; padding:14px 16px; margin:10px 0; box-shadow:0 6px 16px rgba(37,99,235,.05); }
-    .faq summary { cursor:pointer; font-weight:700; }
-    .faq p { margin:8px 0 0; color:#64748b; }
-    a { color:#2563eb; text-decoration:none; }
-    a:hover { text-decoration:underline; }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FAQ – Recenzík</title>
+  <meta name="description" content="Jak funguje osobně vedený pilot: předání recenze, karta stylu, lidské schválení a ruční vložení na Google.">
+  <meta name="theme-color" content="#2563eb">
+  <link rel="canonical" href="https://jiangxinchi.github.io/Recenznik/faq.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Recenzík">
+  <meta property="og:title" content="FAQ – Recenzík">
+  <meta property="og:description" content="Jak funguje osobně vedený pilot: předání recenze, karta stylu, lidské schválení a ruční vložení na Google.">
+  <meta property="og:url" content="https://jiangxinchi.github.io/Recenznik/faq.html">
+  <meta property="og:locale" content="cs_CZ">
+  <meta property="og:image" content="https://jiangxinchi.github.io/Recenznik/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Recenzík – návrhy odpovědí s lidskou kontrolou">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FAQ – Recenzík">
+  <meta name="twitter:description" content="Jak funguje osobně vedený pilot: předání recenze, karta stylu, lidské schválení a ruční vložení na Google.">
+  <meta name="twitter:image" content="https://jiangxinchi.github.io/Recenznik/og-image.png">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="pilot.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Potřebujete přístup do mého Google profilu?", "acceptedAnswer": {"@type": "Answer", "text": "Ne. Předáte text recenze a schválenou odpověď vložíte do svého profilu sami."}}, {"@type": "Question", "name": "Jak vám předám recenzi a jak dostanu návrh?", "acceptedAnswer": {"@type": "Answer", "text": "Způsob ručního předání domluvím při úvodním kontaktu. Text předáte vy nebo pověřený operátor. Návrhy předávám osobně dohodnutým způsobem; jejich odesílání není automatické."}}, {"@type": "Question", "name": "Co je Tonecard?", "acceptedAnswer": {"@type": "Answer", "text": "Krátká karta stylu vašeho podniku: oslovení, míra formálnosti, délka a podpis odpovědí. Zahrnuje také ověřené informace a kroky, které smím zákazníkovi nabídnout."}}, {"@type": "Question", "name": "Píše odpovědi AI?", "acceptedAnswer": {"@type": "Answer", "text": "Recenzík rozvíjím jako službu s pomocí AI. Automatické generování zatím nemá dokončené ověření pro klientský provoz. V pilotu odpovídám za osobní přípravu a kontrolu; ukázky na webu jsou ručně připravené."}}, {"@type": "Question", "name": "Musím schválit každou odpověď?", "acceptedAnswer": {"@type": "Answer", "text": "Ano. Každý návrh osobně zkontroluji a předám vám ke schválení. Úprava textu vyžaduje nové schválení. Na Google jej vložíte sami."}}, {"@type": "Question", "name": "Co když chybí fakta nebo přijde citlivá recenze?", "acceptedAnswer": {"@type": "Answer", "text": "Přípravu pozastavím a doptám se. Bez potvrzení nepíšu o interním šetření, nápravě ani kompenzaci. Citlivé případy vyžadují váš konkrétní pokyn."}}, {"@type": "Question", "name": "Jak rychle návrh dostanu?", "acceptedAnswer": {"@type": "Answer", "text": "Termín domluvíme podle rozsahu a dostupnosti před zahájením spolupráce. Pilot nemá plošně garantovanou dobu odpovědi ani víkendový provoz."}}, {"@type": "Question", "name": "Kolik pilot stojí?", "acceptedAnswer": {"@type": "Answer", "text": "Rozsah, termín a cenu domluvíme před zahájením. Poptávka e-mailem je nezávazná. Web nyní nenabízí pevné tarify, příplatky ani automatickou zkušební dobu."}}, {"@type": "Question", "name": "Obsahuje pilot také reporty a propojení dalších služeb?", "acceptedAnswer": {"@type": "Answer", "text": "Ne. Pilot zahrnuje přípravu návrhů k ručně předaným recenzím a lidskou kontrolu. Automatický sběr, publikování a pravidelné reporty nejsou součástí nabídky."}}, {"@type": "Question", "name": "Jak spolupráci ukončím?", "acceptedAnswer": {"@type": "Answer", "text": "Napište mi e-mailem. Nemám přístup do vašeho profilu, takže není potřeba mě z něj odebírat. Konkrétní podmínky spolupráce domluvíme předem."}}]}</script>
 </head>
 <body>
-  <nav style="width:100%;background:#f6f9ff;border-bottom:1px solid #e5e7eb;padding:12px 0 10px 0;margin-bottom:0;">
-    <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:32px;">
-      <a class="nav-brand" href="index.html" style="font-weight:800;font-size:1.4em;color:#2563eb;letter-spacing:-.5px;">Recenzík</a>
-      <div style="display:flex;gap:28px;align-items:center;">
-        <a href="index.html">Hlavní stránka</a>
-        <a href="faq.html" aria-current="page" style="font-weight:700;">FAQ</a>
-        <a href="fakta.html">Fakta</a>
-        <a href="o-mne.html">O&nbsp;nás</a>
-      </div>
-    </div>
-  </nav>
-  <section class="section">
-    <div class="container">
-      <h1 class="center">Často se ptáte</h1>
-      <div class="faq">
-        <details><summary>Musím vám dávat přístup do profilu?</summary>
-          <p>Ne, nabízíme i variantu, kdy vám posíláme návrhy e-mailem a odpověď vložíte vy.</p>
-        </details>
-        <details><summary>Co když mám měsíc jen 2 recenze?</summary>
-          <p>Platíte stále stejně; nízká aktivita = víc času na ladění profilu a <strong>Týdenní report</strong> a <strong>Měsíční report</strong>.</p>
-        </details>
-        <details><summary>Jak rychle odpovídáte?</summary>
-          <p>Standardně do 24 hodin Po–Pá, v tarifu Pro i o víkendech.</p>
-        </details>
-        <details><summary>Co když se odpověď nebude líbit?</summary>
-          <p>Na začátku schvalujete; jakmile sladíme tón, upravím na vaše preference.</p>
-        </details>
-        <details><summary>Jak řešíte hodně negativní nebo nepravdivé recenze?</summary>
-          <p>Klidně, věcně a s fakty. Navrhnu odpověď, která snižuje konflikt a ukáže, že problém řešíte. Při porušení pravidel poradím s nahlášením.</p>
-        </details>
-        <details><summary>Musím odpovědi předem schvalovat?</summary>
-          <p>Na startu ano (doporučeno). Po vyladění tónu můžeme odpovídat automaticky a posílat <strong>Týdenní report</strong> a <strong>Měsíční report</strong>.</p>
-        </details>
-        <details><summary>Reagujete i o víkendech a ve svátky?</summary>
-          <p>V tarifu <strong>Pro</strong> ano. V ostatních tarifech standardně Po–Pá.</p>
-        </details>
-        <details><summary>V jakých jazycích odpovídáte?</summary>
-          <p>Čeština a angličtina. Po dohodě i další (DE/SK).</p>
-        </details>
-        <details><summary>Jak ukončím spolupráci?</summary>
-          <p>Kdykoli. Odeberete přístup Správce v Google Business a dáte nám vědět e-mailem.</p>
-        </details>
-        <details><summary>Je opravdu zkušebka zdarma?</summary>
-          <p>Ano, prvních 14 dní je zdarma a bez závazků. Pokud během zkušebky nepřijde žádná recenze, prodloužím ji na 30 dní.</p>
-        </details>
-      </div>
-      <p class="center" style="margin-top:32px">
-  <a href="index.html">Zpět na hlavní stránku</a>
-      </p>
-    </div>
-  </section>
+  <a class="skip-link" href="#main">Přejít na obsah</a>
+  <nav class="site-nav" aria-label="Hlavní navigace"><div class="container nav-inner">
+    <a class="nav-brand" href="index.html" aria-label="Recenzík – domů">Recenzík</a>
+    <div class="nav-links"><a href="index.html">Domů</a><a href="faq.html" aria-current="page">FAQ</a><a href="fakta.html">Fakta</a><a href="o-mne.html">O mně</a></div>
+  </div></nav>
+  <main id="main"><section class="section"><div class="container narrow"><h1>Často se ptáte</h1><div class="faq"><details><summary>Potřebujete přístup do mého Google profilu?</summary><p>Ne. Předáte text recenze a schválenou odpověď vložíte do svého profilu sami.</p></details><details><summary>Jak vám předám recenzi a jak dostanu návrh?</summary><p>Způsob ručního předání domluvím při úvodním kontaktu. Text předáte vy nebo pověřený operátor. Návrhy předávám osobně dohodnutým způsobem; jejich odesílání není automatické.</p></details><details><summary>Co je Tonecard?</summary><p>Krátká karta stylu vašeho podniku: oslovení, míra formálnosti, délka a podpis odpovědí. Zahrnuje také ověřené informace a kroky, které smím zákazníkovi nabídnout.</p></details><details><summary>Píše odpovědi AI?</summary><p>Recenzík rozvíjím jako službu s pomocí AI. Automatické generování zatím nemá dokončené ověření pro klientský provoz. V pilotu odpovídám za osobní přípravu a kontrolu; ukázky na webu jsou ručně připravené.</p></details><details><summary>Musím schválit každou odpověď?</summary><p>Ano. Každý návrh osobně zkontroluji a předám vám ke schválení. Úprava textu vyžaduje nové schválení. Na Google jej vložíte sami.</p></details><details><summary>Co když chybí fakta nebo přijde citlivá recenze?</summary><p>Přípravu pozastavím a doptám se. Bez potvrzení nepíšu o interním šetření, nápravě ani kompenzaci. Citlivé případy vyžadují váš konkrétní pokyn.</p></details><details><summary>Jak rychle návrh dostanu?</summary><p>Termín domluvíme podle rozsahu a dostupnosti před zahájením spolupráce. Pilot nemá plošně garantovanou dobu odpovědi ani víkendový provoz.</p></details><details><summary>Kolik pilot stojí?</summary><p>Rozsah, termín a cenu domluvíme před zahájením. Poptávka e-mailem je nezávazná. Web nyní nenabízí pevné tarify, příplatky ani automatickou zkušební dobu.</p></details><details><summary>Obsahuje pilot také reporty a propojení dalších služeb?</summary><p>Ne. Pilot zahrnuje přípravu návrhů k ručně předaným recenzím a lidskou kontrolu. Automatický sběr, publikování a pravidelné reporty nejsou součástí nabídky.</p></details><details><summary>Jak spolupráci ukončím?</summary><p>Napište mi e-mailem. Nemám přístup do vašeho profilu, takže není potřeba mě z něj odebírat. Konkrétní podmínky spolupráce domluvíme předem.</p></details></div><p class="spaced"><a class="btn" href="mailto:recenzik.team@gmail.com?subject=Domluva%20pilotu%20Recenz%C3%ADk">Domluvit pilot e-mailem</a></p></div></section></main>
+  <footer class="site-footer"><div class="container center">
+    <p>© 2026 Recenzík · Xinchi Jiang · IČO: 21591202</p>
+    <nav class="footer-links" aria-label="Další stránky"><a href="faq.html" aria-current="page">FAQ</a><a href="fakta.html">Fakta</a><a href="o-mne.html">O mně</a><a href="terms.html">Podmínky</a><a href="privacy.html">Soukromí</a><a href="cookies.html">Cookies</a><a href="imprint.html">Imprint</a></nav>
+    <p><a href="mailto:recenzik.team@gmail.com">recenzik.team@gmail.com</a></p>
+    <p>Recenzík není spojen se společností Google LLC.</p>
+  </div></footer>
 </body>
 </html>
